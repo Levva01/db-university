@@ -8,7 +8,7 @@ WHERE `cfu` > 10;
 
 SELECT *
 FROM `students`
-WHERE (DATEDIFF(CURRENT_DATE(), `date_of_birth`) / 365) > 30;
+WHERE TIMESTAMPDIFF(YEAR, `date_of_birth`, CURDATE()) >= 30;
 
 SELECT *
 FROM `courses`
@@ -18,7 +18,7 @@ AND `year` = '1';
 SELECT *
 FROM `exams`
 WHERE `date` = '2020-06-20'
-AND HOUR(`hour`) > 13;
+AND HOUR(`hour`) >= 14;
 
 SELECT *
 FROM `degrees`
