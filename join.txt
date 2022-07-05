@@ -1,0 +1,19 @@
+SELECT *
+FROM `students`
+JOIN `degrees`
+ON `students`.`degree_id` = `degrees`.`id`;
+
+SELECT *
+FROM `degrees`
+JOIN `departments`
+ON `degrees`.`department_id` = `departments`.`id`
+WHERE `departments`.`id` = `Dipartimento di Neuroscienze`
+AND `degrees`.`level` = 'magistrale';
+
+SELECT *
+FROM `courses`
+JOIN `course_teacher`
+ON `courses`.`id` = `course_teacher`.`course_id`
+JOIN `degrees`
+ON `courses`.`degree_id` = `degrees`.`id`
+WHERE `course_teacher`.`teacher_id` = 44;
